@@ -1,13 +1,14 @@
 package handlers
 
 import (
+	"Receipt-Processor-Challenge/internal/calculator"
+	"Receipt-Processor-Challenge/internal/models"
+	"Receipt-Processor-Challenge/internal/storage"
 	"encoding/json"
 	"log"
 	"net/http"
 	"strings"
-	"Receipt-Processor-Challenge/internal/models"
-	"Receipt-Processor-Challenge/internal/storage"
-	"Receipt-Processor-Challenge/internal/calculator"
+
 	"github.com/google/uuid"
 )
 
