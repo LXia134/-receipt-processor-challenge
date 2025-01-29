@@ -24,7 +24,7 @@ func ProcessReceipt(w http.ResponseWriter, r *http.Request) {
 
 	storage.SaveReceipt(id, receipt, calculatedPoints)
 
-	log.Printf("Receipt processed: ID=%s, Points=%d\n", id, calculatedPoints)
+	log.Printf("Receipt saved: ID=%s, Points=%d\n", id, calculatedPoints)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(map[string]string{"id": id})
@@ -39,8 +39,6 @@ func GetPoints(w http.ResponseWriter, r *http.Request) {
 	}
 
 	id := pathParts[0]
-	log.Printf("Fetching points for receipt ID: %s\n", id)
-
 	points, found := storage.GetPoints(id)
 	if !found {
 		log.Printf("No receipt found for ID: %s\n", id)
@@ -48,7 +46,7 @@ func GetPoints(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	log.Printf("Points found for receipt ID: %s -> Points: %d\n", id, points)
+	log.Printf("Points for receipt ID: %s -> Points: %d\n", id, points)
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	json.NewEncoder(w).Encode(map[string]int{"points": points})
