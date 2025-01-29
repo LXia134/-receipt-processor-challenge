@@ -22,7 +22,6 @@ func ProcessReceipt(w http.ResponseWriter, r *http.Request) {
 	id := uuid.New().String()
 	calculatedPoints := calculator.CalculatePoints(receipt)
 
-	// Store both receipt and points
 	storage.SaveReceipt(id, receipt, calculatedPoints)
 
 	log.Printf("Receipt processed: ID=%s, Points=%d\n", id, calculatedPoints)

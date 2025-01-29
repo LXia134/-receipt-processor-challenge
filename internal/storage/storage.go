@@ -7,8 +7,8 @@ import (
 )
 
 var (
-	receipts = make(map[string]models.Receipt) // Store full receipts
-	points   = make(map[string]int)            // Store points separately
+	receipts = make(map[string]models.Receipt) 
+	points   = make(map[string]int)            
 	mutex    sync.Mutex
 )
 
