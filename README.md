@@ -1,6 +1,4 @@
 # Receipt Processor API
-# Lucy Xia | 01/29/2025 | Fetch Back-end Engineer -- Take Home Assessment (https://github.com/fetch-rewards/receipt-processor-challenge)
-
 ## Running the Application
 
 ### Without Docker
